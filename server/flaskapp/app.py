@@ -14,9 +14,8 @@ tasklist = TaskListApp()
 @app.get('/')
 async def index(request: Request):
     tasks = tasklist.index()
-    return JSONResponse({"response": "I am alive."})
+    return JSONResponse({"tasks": tasks})
     # return templates.TemplateResponse('index.html', {'request': request, 'tasks': tasks})
-
 
 
 @app.post('/add')
@@ -42,4 +41,5 @@ async def delete_task(request: Request):
 
 if __name__ == '__main__':
     import uvicorn
+
     uvicorn.run(app, host='0.0.0.0', port=8000)
