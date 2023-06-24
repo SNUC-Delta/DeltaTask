@@ -1,41 +1,45 @@
-from flask import Flask, render_template, request, redirect
+from fastapi import FastAPI, Request, Form
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import RedirectResponse, JSONResponse
 from server.db import db as handler
 
 from tasklist import TaskListApp
 
-# FIX: Getting module errors from the above import someone pls fix thx
+app = FastAPI()
+templates = Jinja2Templates(directory="templates")
+
+tasklist = TaskListApp()
 
 
-app = Flask(__name__)
-
-
-@app.route('/')
-def index():
+@app.get('/')
+async def index(request: Request):
     tasks = tasklist.index()
-    return render_template('index.html', tasks=tasks)
+    return JSONResponse({"response": "I am alive."})
+    # return templates.TemplateResponse('index.html', {'request': request, 'tasks': tasks})
 
 
-@app.route('/add', methods=['POST'])
-def add_task():
-    form = request.form
+
+@app.post('/add')
+async def add_task(request: Request):
+    form = request.json()
     tasklist.add_task(form)
-    return redirect('/')
+    return RedirectResponse('/', status_code=303)
 
 
-@app.route('/update', methods=['POST'])
-def update_task():
-    form = request.form
+@app.post('/update')
+async def update_task(request: Request):
+    form = request.json()
     tasklist.update_task(form)
-    return redirect('/')
+    return RedirectResponse('/', status_code=303)
 
 
-@app.route('/delete', methods=['POST'])
-def delete_task():
-    form = request.form
+@app.post('/delete')
+async def delete_task(request: Request):
+    form = request.json()
     tasklist.delete_task(form)
-    return redirect('/')
+    return RedirectResponse('/', status_code=303)
 
 
 if __name__ == '__main__':
-    tasklist = TaskListApp()
-    app.run(debug=True)
+    import uvicorn
+    uvicorn.run(app, host='0.0.0.0', port=8000)
