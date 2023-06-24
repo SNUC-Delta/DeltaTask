@@ -1,7 +1,6 @@
 .main_nav__container {
     display: flex;
     margin: 10px;
-    background: #F1C376;
     padding: 8px;
     border-radius: 15px;
 }
@@ -12,22 +11,15 @@
     width: 100%;
 }
 
-.nav_cta__button:hover {
-    background: transparent;
-    color: #606C5D;
-    transition: all 0.5s;
-
-}
-
 .nav_cta__button {
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
-    background: #606C5D;
-    color: #F1C376;
+    color: white;
+    background: black;
+    border: none;
     transition: all 0.5s;
-    font-weight: 700;
-    border: solid 2px #606C5D;
-    padding: 8px;
+    font-weight: 600;
+    padding: 10px;
 }
 
 .nav_logo {
@@ -36,6 +28,6 @@
     justify-content: center;
     align-items: center;
     font-family: 'Montserrat', sans-serif;
-    color: #606C5D;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: large;
 }
