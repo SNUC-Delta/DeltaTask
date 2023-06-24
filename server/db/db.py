@@ -7,6 +7,7 @@ class Database:
         self.connection = None
         self.cursor = None
         self.connect()
+        self.create_table()
 
 
     def connect(self):
