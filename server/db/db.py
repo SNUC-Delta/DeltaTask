@@ -8,7 +8,7 @@ class Database:
         self.cursor = None
 
     def connect(self):
-        self.connection = sqlite3.connectionect(self.db_name)
+        self.connection = sqlite3.connect(self.db_name)
         self.cursor = self.connection.cursor()
         self.create_table()
 
