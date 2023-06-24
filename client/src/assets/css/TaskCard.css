@@ -1,0 +1,66 @@
+.task-card {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 15px;
+    background-color: #F7E6C4;
+    position: relative;
+  }
+  
+  .task-card h3 {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #606C5D;
+  }
+  
+  .task-card p {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5px;
+    color: black;
+  }
+  
+  #delete  {
+    position: absolute;
+    top: 15px;
+    right: 10px;  
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 5rem;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 30px;
+    background-color: #606C5D;
+    color: white;
+    padding: 0 10px;
+    border-radius: 10px
+
+
+  }  
+
+  #edit {
+    position: absolute;
+    top: 56px;
+    right: 10px;  
+    font-family: 'Montserrat', sans-serif;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    width: 5rem;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 13px;
+    height: 30px;
+    background-color: #606C5D;
+    color: white;
+    padding: 0 10px;
+    
+    border-radius: 10px;
+  }
+
